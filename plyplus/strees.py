@@ -38,7 +38,7 @@ class STree(object):
         return hash((self.head, tuple(self.tail)))
     def __eq__(self, other):
         try:
-            return self.head == other.head and self.tail == other.tail
+            return self.head == other.head and sorted(self.tail) == sorted(other.tail)
         except AttributeError:
             return False
 
